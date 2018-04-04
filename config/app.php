@@ -154,12 +154,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\GoogleClientServiceProvider::class,
+        App\Providers\GoogleServiceYoutubeProvider::class,
+        Vimeo\Laravel\VimeoServiceProvider::class,
+        App\Providers\YoutubeVideoInfoServiceProvider::class,
+        App\Providers\VimeoVideoInfoServiceProvider::class
     ],
 
     /*
@@ -208,7 +208,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Vimeo' => Vimeo\Laravel\Facades\Vimeo::class
     ],
 
 ];
