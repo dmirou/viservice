@@ -12,7 +12,7 @@ class VideoInfoController extends Controller {
     $videoSourceCode = $request->get('sourceCode', '');
 
     if(empty($videoSourceCode)) {
-      return response()->json([], 400);
+      abort(400);
     }
 
     try {
@@ -22,7 +22,7 @@ class VideoInfoController extends Controller {
       $videoInfo = $videoProvidersChain->getVideoInfo($videoSourceCode);
       
     } catch(Exception $exception) {
-      return response()->json([], 500);
+      abort(500);
     }
     
     if(is_null($videoInfo)) {
